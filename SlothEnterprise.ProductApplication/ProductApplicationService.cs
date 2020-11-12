@@ -19,15 +19,15 @@ namespace SlothEnterprise.ProductApplication
             _businessLoansService = businessLoansService;
         }
 
-        public int SubmitApplicationFor(ISellerApplication application)
+        public int SubmitApplicationFor(SellerApplicationDTO application)
         {
 
-            if (application.Product is SelectiveInvoiceDiscount sid)
+            if (application.Product is SelectiveInvoiceDiscountDTO sid)
             {
                 return _selectInvoiceService.SubmitApplicationFor(application.CompanyData.Number.ToString(), sid.InvoiceAmount, sid.AdvancePercentage);
             }
 
-            if (application.Product is ConfidentialInvoiceDiscount cid)
+            if (application.Product is ConfidentialInvoiceDiscountDTO cid)
             {
                 var result = _confidentialInvoiceWebService.SubmitApplicationFor(
                     new CompanyDataRequest
@@ -41,7 +41,7 @@ namespace SlothEnterprise.ProductApplication
                 return (result.Success) ? result.ApplicationId ?? -1 : -1;
             }
 
-            if (application.Product is BusinessLoans loans)
+            if (application.Product is BusinessLoansDTO loans)
             {
                 var result = _businessLoansService.SubmitApplicationFor(new CompanyDataRequest
                 {

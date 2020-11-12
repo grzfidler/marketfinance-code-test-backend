@@ -1,8 +1,7 @@
 ﻿namespace SlothEnterprise.ProductApplication.Products
 {
-    public class SelectiveInvoiceDiscount : IProduct
+    public class SelectiveInvoiceDiscountDTO : ProductDTO
     {
-        public int Id { get; set; }
         /// <summary>
         /// Proposed networth of the Invoice
         /// </summary>

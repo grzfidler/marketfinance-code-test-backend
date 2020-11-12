@@ -1,6 +1,6 @@
 ﻿namespace SlothEnterprise.ProductApplication.Products
 {
-    public interface IProduct
+    public abstract class ProductDTO
     {
         int Id { get; }
     }
