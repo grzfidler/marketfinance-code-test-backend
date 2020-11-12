@@ -11,6 +11,7 @@ namespace SlothEnterprise.ProductApplication.Services
         private readonly ISelectInvoiceService _selectInvoiceService;
         private readonly IConfidentialInvoiceService _confidentialInvoiceWebService;
         private readonly IBusinessLoansService _businessLoansService;
+        private const int _failedResultValue = -1;
 
         public ProductApplicationService(ISelectInvoiceService selectInvoiceService, IConfidentialInvoiceService confidentialInvoiceWebService, IBusinessLoansService businessLoansService)
         {
@@ -38,7 +39,7 @@ namespace SlothEnterprise.ProductApplication.Services
                         DirectorName = application.CompanyData.DirectorName
                     }, cid.TotalLedgerNetworth, cid.AdvancePercentage, cid.VatRate);
 
-                return (result.Success) ? result.ApplicationId ?? -1 : -1;
+                return (result.Success) ? result.ApplicationId ?? _failedResultValue : _failedResultValue;
             }
 
             if (application.Product is BusinessLoansDTO loans)
@@ -54,7 +55,7 @@ namespace SlothEnterprise.ProductApplication.Services
                     InterestRatePerAnnum = loans.InterestRatePerAnnum,
                     LoanAmount = loans.LoanAmount
                 });
-                return (result.Success) ? result.ApplicationId ?? -1 : -1;
+                return (result.Success) ? result.ApplicationId ?? _failedResultValue : _failedResultValue;
             }
 
             throw new InvalidOperationException();
