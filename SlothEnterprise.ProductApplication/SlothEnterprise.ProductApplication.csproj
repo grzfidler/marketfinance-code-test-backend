@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SlothEnterprise.External\SlothEnterprise.External.csproj" />
+    <ProjectReference Include="..\SlothEnterprise.ProductApplication.DTOs\SlothEnterprise.ProductApplication.DTOs.csproj" />
   </ItemGroup>
 
 </Project>
