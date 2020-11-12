@@ -1,4 +1,6 @@
-﻿namespace SlothEnterprise.ProductApplication.Products
+﻿using SlothEnterprise.ProductApplication.Constants;
+
+namespace SlothEnterprise.ProductApplication.Products
 {
     public class SelectiveInvoiceDiscountDTO : ProductDTO
     {
@@ -9,6 +11,6 @@
         /// <summary>
         /// Percentage of the networth agreed and advanced to seller
         /// </summary>
-        public decimal AdvancePercentage { get; set; } = 0.80M;
+        public decimal AdvancePercentage { get; set; } = AdvancePercentages.DefaultAdvancePercentage;
     }
 }

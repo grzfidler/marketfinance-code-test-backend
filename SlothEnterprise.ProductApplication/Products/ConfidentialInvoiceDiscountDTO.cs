@@ -1,4 +1,6 @@
-﻿namespace SlothEnterprise.ProductApplication.Products
+﻿using SlothEnterprise.ProductApplication.Constants;
+
+namespace SlothEnterprise.ProductApplication.Products
 {
     public class ConfidentialInvoiceDiscountDTO : ProductDTO
     {
