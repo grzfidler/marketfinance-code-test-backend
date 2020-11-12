@@ -1,4 +1,4 @@
-﻿namespace SlothEnterprise.ProductApplication.Constants
+﻿namespace SlothEnterprise.ProductApplication.DTOs.Constants
 {
     public class VatRates
     {

@@ -1,6 +1,6 @@
-﻿using SlothEnterprise.ProductApplication.Products;
+﻿using SlothEnterprise.ProductApplication.DTOs.Products;
 
-namespace SlothEnterprise.ProductApplication.Applications
+namespace SlothEnterprise.ProductApplication.DTOs.Applications
 {
     public class SellerApplicationDTO
     {

@@ -1,10 +1,10 @@
 ﻿using System;
 using SlothEnterprise.External;
 using SlothEnterprise.External.V1;
-using SlothEnterprise.ProductApplication.Applications;
-using SlothEnterprise.ProductApplication.Products;
+using SlothEnterprise.ProductApplication.DTOs.Applications;
+using SlothEnterprise.ProductApplication.DTOs.Products;
 
-namespace SlothEnterprise.ProductApplication
+namespace SlothEnterprise.ProductApplication.Services
 {
     public class ProductApplicationService
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SlothEnterprise.ProductApplication.Applications
+namespace SlothEnterprise.ProductApplication.DTOs.Applications
 {
     public class SellerCompanyDataDTO
     {

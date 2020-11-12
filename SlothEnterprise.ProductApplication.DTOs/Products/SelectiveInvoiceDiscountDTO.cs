@@ -1,6 +1,6 @@
-﻿using SlothEnterprise.ProductApplication.Constants;
+﻿using SlothEnterprise.ProductApplication.DTOs.Constants;
 
-namespace SlothEnterprise.ProductApplication.Products
+namespace SlothEnterprise.ProductApplication.DTOs.Products
 {
     public class SelectiveInvoiceDiscountDTO : ProductDTO
     {

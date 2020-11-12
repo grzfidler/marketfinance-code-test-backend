@@ -1,4 +1,4 @@
-﻿namespace SlothEnterprise.ProductApplication.Products
+﻿namespace SlothEnterprise.ProductApplication.DTOs.Products
 {
     public class BusinessLoansDTO : ProductDTO
     {
