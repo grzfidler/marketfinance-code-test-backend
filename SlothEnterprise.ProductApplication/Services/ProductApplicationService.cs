@@ -1,8 +1,8 @@
-﻿using System;
-using SlothEnterprise.External;
-using SlothEnterprise.External.V1;
+﻿using SlothEnterprise.External.V1;
 using SlothEnterprise.ProductApplication.DTOs.Applications;
 using SlothEnterprise.ProductApplication.DTOs.Products;
+using SlothEnterprise.ProductApplication.Helpers;
+using System;
 
 namespace SlothEnterprise.ProductApplication.Services
 {
@@ -31,30 +31,16 @@ namespace SlothEnterprise.ProductApplication.Services
             if (application.Product is ConfidentialInvoiceDiscountDTO cid)
             {
                 var result = _confidentialInvoiceWebService.SubmitApplicationFor(
-                    new CompanyDataRequest
-                    {
-                        CompanyFounded = application.CompanyData.Founded,
-                        CompanyNumber = application.CompanyData.Number,
-                        CompanyName = application.CompanyData.Name,
-                        DirectorName = application.CompanyData.DirectorName
-                    }, cid.TotalLedgerNetworth, cid.AdvancePercentage, cid.VatRate);
+                    RequestHelper.CreateCompanyDataRequest(application.CompanyData), cid.TotalLedgerNetworth, cid.AdvancePercentage, cid.VatRate);
 
                 return (result.Success) ? result.ApplicationId ?? _failedResultValue : _failedResultValue;
             }
 
             if (application.Product is BusinessLoansDTO loans)
             {
-                var result = _businessLoansService.SubmitApplicationFor(new CompanyDataRequest
-                {
-                    CompanyFounded = application.CompanyData.Founded,
-                    CompanyNumber = application.CompanyData.Number,
-                    CompanyName = application.CompanyData.Name,
-                    DirectorName = application.CompanyData.DirectorName
-                }, new LoansRequest
-                {
-                    InterestRatePerAnnum = loans.InterestRatePerAnnum,
-                    LoanAmount = loans.LoanAmount
-                });
+                var result = _businessLoansService.SubmitApplicationFor(
+                    RequestHelper.CreateCompanyDataRequest(application.CompanyData), RequestHelper.CreateLoansRequest(loans));
+
                 return (result.Success) ? result.ApplicationId ?? _failedResultValue : _failedResultValue;
             }
 
