@@ -2,11 +2,12 @@
 using SlothEnterprise.ProductApplication.DTOs.Applications;
 using SlothEnterprise.ProductApplication.DTOs.Products;
 using SlothEnterprise.ProductApplication.Helpers;
+using SlothEnterprise.ProductApplication.Interfaces;
 using System;
 
 namespace SlothEnterprise.ProductApplication.Services
 {
-    public class ProductApplicationService
+    public class ProductApplicationService : IProductApplicationService
     {
         private readonly ISelectInvoiceService _selectInvoiceService;
         private readonly IConfidentialInvoiceService _confidentialInvoiceWebService;
